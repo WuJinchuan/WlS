@@ -1,5 +1,4 @@
 <div class="search-route-page">
-    <fm-image-swiper></fm-image-swiper>
     <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title header-title">
@@ -7,27 +6,45 @@
             </h3>
         </div>
         <div class="panel-body">
-            <div class="search-filter-container">
-                <div class="search-keyword-container">
-                    <div class="input-group">
-                        <input type="text" placeholder="请输入物流公司名称" class="form-control">
+            <div class="search-filter-container swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" >
+                        <div class="template-content" data-ng-include="'search-by-name.html'"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="template-content" data-ng-include="'search-by-position.html'"></div>
                     </div>
                 </div>
-                <div class="region-filter">
-                    <div class="province-container">请选择省份<city-picker/></div>
-                    <div class="city-container">请选择市<city-picker/></div>
-                </div>
-                <div class="search-btn">
-                    <div class="search-btn-primary">
-                        <img src="../../../images/search-icon.svg"/>搜索
-                    </div>
-                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
     </div>
-    
-    <div class="search-result-container">
-        <div>物流公司-------</div>
-        <div class="no-result">暂未搜到相关物流...</div>
-    </div>    
+
+    <img class="advert" src="../.././../images/advert.jpg">
+
+    <script type="text/ng-template" id="search-by-name.html">
+        <div class="search-keyword-container">
+            <div class="input-group">
+                <input type="text" placeholder="请输入物流公司名称" class="form-control">
+            </div>
+        </div>
+        <div class="search-btn">
+            <div class="search-btn-primary">
+                <img src="../../../images/search-icon.svg"/>搜索
+            </div>
+        </div>
+    </script>
+        
+    <script type="text/ng-template" id="search-by-position.html">
+        <div class="region-filter">
+            <div class="province-container">请选择省份<city-picker/></div>
+            <div class="city-container">请选择市<city-picker/></div>
+        </div>
+        <div class="search-btn">
+            <div class="search-btn-primary">
+                <img src="../../../images/search-icon.svg"/>搜索
+            </div>
+        </div>
+    </script>
 </div>
