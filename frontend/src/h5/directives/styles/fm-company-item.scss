@@ -1,0 +1,74 @@
+@import '../../styles/mixins';
+.fm-company-container {
+    margin: 0.2rem 0.2rem 0 0.2rem;
+    padding: 0.2rem;
+    border-radius: 0.8rem;
+    -webkit-box-shadow: 0.02rem 0.06rem 0.6rem #87959cf0;
+    box-shadow: 0.02rem 0.06rem 0.6rem #87959cf0;
+    border: 2px solid #d7e0e8;
+    background-color: #e2e4e6;
+    display: flex;
+    justify-content: space-between;
+    line-height: 40px;
+    @include font-size(14px);
+    .left-part {
+        margin-right: 0.2rem;
+        .company-photo {
+            width: 2.3rem;
+            height: 2.3rem;
+            img {
+                width: inherit;
+                height: inherit;
+                border-radius: 0.3rem;
+            }
+        }
+    }
+    .right-part {
+        .item-border-bottom {
+            border-bottom: 1px solid #bccbda;
+            margin-bottom: 0.1rem;
+        }
+        .company-name-wrapper {
+            display: flex;
+            .groom-label {
+                display: inline-block;
+                height: fit-content;
+                background-color: #8a9ae6;
+                color: #fff;
+                border-radius: 0.07rem;
+                padding: 0 0.1rem;
+            }
+            .company-name {
+                margin-left: 0.1rem;
+            }
+        }
+        .nonstop-route-wrapper {
+            display: flex;
+            .target-place {
+                .nonstop-label {
+                    display: inline-block;
+                    color: #fff;
+                    border-radius: 0.07rem;
+                    padding: 0 0.1rem;
+                    background-color: #a2df9a;
+                    margin-left: 0.1rem;
+                }
+            }
+            .chang-icon {
+                img {
+                    width: 0.5rem;
+                    height: 0.5rem;
+                    display: inline-block;
+                    vertical-align: bottom;
+                }
+            }
+        }
+    }
+    &:active {
+        background-color: #e6eef5;
+        -webkit-box-shadow: -0.02rem -0.02rem 0.2rem #87959cf0;
+        box-shadow: -0.02rem -0.02rem 0.2rem #87959cf0;
+        position: relative;
+        top: -2px;
+    }
+} 

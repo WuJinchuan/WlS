@@ -1,0 +1,87 @@
+<div class="company-detail-page">
+    <div class="photo-container">
+        <fm-image-swiper ng-if="true" media="media"></fm-image-swiper>
+        <img class="non-media-photo" ng-if="false" src="" />
+      </div>
+
+      <div class="product-detail-container">
+        <div class="section-header">
+            <div class="section-icon"></div>
+            <div class="title">企业信息</div>
+        </div>
+        <div class="product-field name">
+          <label class="filed-label">
+            <span>公司</span>
+            <div class="chang-icon"><img src="../../../images/location.svg"></div>
+            :
+          </label>
+          <div class="value">
+            <div class="left-value">金盛运物流有限公司</div>
+          </div>
+        </div>
+        <div class="product-field">
+            <label class="filed-label">
+                <span>移动电话</span>
+                <div class="chang-icon"><img src="../../../images/mobile-phone.svg"></div>
+                :
+            </label>
+            <div class="value">11111111111</div>
+        </div>
+        <div class="product-field">
+            <label class="filed-label">
+                <span>固定电话</span>
+                <div class="chang-icon"><img src="../../../images/local-phone.svg"></div>
+                :
+            </label>
+            <div class="value">0000000000</div>
+        </div>
+        <div class="product-field">
+                <label class="filed-label">
+                    <span>地址</span>
+                    <div class="chang-icon"><img src="../../../images/position.svg"></div>
+                    :
+                </label>
+            <div class="value">中山市东凤镇天润物流市场第22栋</div>
+        </div>
+
+        <div class="shipping-container">
+            <div class="header" ng-click="clickShippingDetail(showShippingDetail)">
+              <div class="section-icon"></div>
+              <div class="title">
+                <span class="label-shipping">专线概况</span>
+                <img src="../../../images/shipping-icon.png">
+              </div>
+              <div class="arrow-icon">
+                <img ng-if="!showShippingDetail" src="../../../images/nav-left.png"/>
+                <img ng-if="showShippingDetail" src="../../../images/nav-right.png"/>
+              </div>
+            </div>
+            <div id="shipping-detail" class="shipping-detail hideDetail">
+              <div class="nonstop-places-wrapper item-border-bottom">
+                  <span class="title">直达: </span>
+                  成都,四川，湖北，武汉
+              </div>
+              <div class="nonstop-places-wrapper item-border-bottom">
+                  <span class="title">中转: </span>
+                  成都,四川，湖北，武汉
+              </div>
+            </div>
+          </div> 
+      </div>
+
+      
+
+      <div class="detail-audio-container">
+        <div class="section-header">
+            <div class="section-icon"></div>
+            <div class="title">企业概览</div>
+        </div>
+        <div class="audio-content">
+          <div class="picture-help-text" ng-if="false">商家暂未上传商品展示图</div>
+          <img src="../../../images/aa.jpg" ng-if="true" />
+          <img src="../../../images/bb.jpg" ng-if="true" />
+          <div class="description-text">请在下面的文本框内输入文字,然后点击开始翻译按钮进行翻译,如果您看不到结果,请重新翻译! 是否有固定的物流路线 选择语言:从 到 翻译..</div>
+        </div>
+      </div>
+
+</div>

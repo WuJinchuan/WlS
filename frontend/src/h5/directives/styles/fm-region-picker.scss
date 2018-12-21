@@ -1,0 +1,83 @@
+@import '../../styles/mixins';
+
+.fm-region-picker {
+  height: .93rem;
+  padding: 0 .27rem;
+  @include font-size(12px);
+
+  div {
+    display: inline-block;
+  }
+  .region-input {
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .picker-wrapper {
+    .mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #000 !important;
+      opacity: 0.5;
+      z-index: 1071;
+    }
+
+    .picker {
+      position: fixed;
+      z-index: 1072;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: 0 !important;
+      background: white;
+
+      .picker-header {
+        text-align: center;
+        margin: 0;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        position: relative;
+
+        .finish {
+          position: absolute;
+          right: .27rem;
+        }
+      }
+
+      .picker-content {
+        margin: 0;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        height: 6rem;
+
+        ul {
+          height: 100%;
+          overflow: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+
+          li {
+            @include font-size(14px);
+            height: 1rem;
+            line-height: 1rem;
+            text-align: center;
+          }
+        }
+      }
+
+      .picker-footer {
+        margin: 0;
+        height: 1.2rem;
+        line-height: 1.2rem;
+        text-align: center;
+      }
+    }
+  }
+}

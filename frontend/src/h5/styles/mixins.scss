@@ -1,0 +1,36 @@
+@mixin placeholder {
+  ::-webkit-input-placeholder {
+    @content;
+  }
+
+ :-moz-placeholder {
+    @content;
+  }
+
+ ::-moz-placeholder {
+    @content;
+  }
+
+  :-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin font-size($size: 14px) {
+  font-size: $size;
+
+  [data-dpr="2"] & {
+    font-size: $size * 2;
+  }
+
+  [data-dpr="3"] & {
+    font-size: $size * 3;
+  }
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}

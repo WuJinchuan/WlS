@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.wlcx.mapper.CMMatcherMapper" >
+  <resultMap id="BaseResultMap" type="com.wx.wlcx.model.CMMatcher" >
+    <result column="COID" property="coid" jdbcType="NCHAR" />
+    <result column="CR_Idx" property="crIdx" jdbcType="INTEGER" />
+    <result column="CR_Mode" property="crMode" jdbcType="INTEGER" />
+    <result column="CT_Mode" property="ctMode" jdbcType="INTEGER" />
+    <result column="CR_Fate" property="crFate" jdbcType="DOUBLE" />
+    <result column="RG_Code" property="rgCode" jdbcType="NVARCHAR" />
+    <result column="RG_Name" property="rgName" jdbcType="NVARCHAR" />
+    <result column="AR_Code" property="arCode" jdbcType="NVARCHAR" />
+    <result column="AR_Name" property="arName" jdbcType="NVARCHAR" />
+    <result column="CM_Code" property="cmCode" jdbcType="NVARCHAR" />
+    <result column="CM_Name" property="cmName" jdbcType="NVARCHAR" />
+    <result column="CR_Addr" property="crAddr" jdbcType="NVARCHAR" />
+    <result column="CR_Style" property="crStyle" jdbcType="INTEGER" />
+    <result column="CR_Grade" property="crGrade" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wx.wlcx.model.CMMatcher" >
+    insert into CM_Matcher (COID, CR_Idx, CR_Mode, 
+      CT_Mode, CR_Fate, RG_Code, 
+      RG_Name, AR_Code, AR_Name, 
+      CM_Code, CM_Name, CR_Addr, 
+      CR_Style, CR_Grade)
+    values (#{coid,jdbcType=NCHAR}, #{crIdx,jdbcType=INTEGER}, #{crMode,jdbcType=INTEGER}, 
+      #{ctMode,jdbcType=INTEGER}, #{crFate,jdbcType=DOUBLE}, #{rgCode,jdbcType=NVARCHAR}, 
+      #{rgName,jdbcType=NVARCHAR}, #{arCode,jdbcType=NVARCHAR}, #{arName,jdbcType=NVARCHAR}, 
+      #{cmCode,jdbcType=NVARCHAR}, #{cmName,jdbcType=NVARCHAR}, #{crAddr,jdbcType=NVARCHAR}, 
+      #{crStyle,jdbcType=INTEGER}, #{crGrade,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wx.wlcx.model.CMMatcher" >
+    insert into CM_Matcher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="coid != null" >
+        COID,
+      </if>
+      <if test="crIdx != null" >
+        CR_Idx,
+      </if>
+      <if test="crMode != null" >
+        CR_Mode,
+      </if>
+      <if test="ctMode != null" >
+        CT_Mode,
+      </if>
+      <if test="crFate != null" >
+        CR_Fate,
+      </if>
+      <if test="rgCode != null" >
+        RG_Code,
+      </if>
+      <if test="rgName != null" >
+        RG_Name,
+      </if>
+      <if test="arCode != null" >
+        AR_Code,
+      </if>
+      <if test="arName != null" >
+        AR_Name,
+      </if>
+      <if test="cmCode != null" >
+        CM_Code,
+      </if>
+      <if test="cmName != null" >
+        CM_Name,
+      </if>
+      <if test="crAddr != null" >
+        CR_Addr,
+      </if>
+      <if test="crStyle != null" >
+        CR_Style,
+      </if>
+      <if test="crGrade != null" >
+        CR_Grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="coid != null" >
+        #{coid,jdbcType=NCHAR},
+      </if>
+      <if test="crIdx != null" >
+        #{crIdx,jdbcType=INTEGER},
+      </if>
+      <if test="crMode != null" >
+        #{crMode,jdbcType=INTEGER},
+      </if>
+      <if test="ctMode != null" >
+        #{ctMode,jdbcType=INTEGER},
+      </if>
+      <if test="crFate != null" >
+        #{crFate,jdbcType=DOUBLE},
+      </if>
+      <if test="rgCode != null" >
+        #{rgCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="rgName != null" >
+        #{rgName,jdbcType=NVARCHAR},
+      </if>
+      <if test="arCode != null" >
+        #{arCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="arName != null" >
+        #{arName,jdbcType=NVARCHAR},
+      </if>
+      <if test="cmCode != null" >
+        #{cmCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="cmName != null" >
+        #{cmName,jdbcType=NVARCHAR},
+      </if>
+      <if test="crAddr != null" >
+        #{crAddr,jdbcType=NVARCHAR},
+      </if>
+      <if test="crStyle != null" >
+        #{crStyle,jdbcType=INTEGER},
+      </if>
+      <if test="crGrade != null" >
+        #{crGrade,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,92 @@
+@import '../../../styles/mixins';
+$header-text-color: #0a4d86;
+$header-background-color: #d9e6f5;
+$content-background-color: #fff;
+$border-color: #89c4f1;
+$input-border-color: #cabfbf;
+$box-shadow: #a5bcd4;
+
+.search-route-page{
+    margin: 0.26rem 0 0.26rem 0;
+
+    .panel-default {
+        border-color: $border-color;
+        .panel-heading {
+            padding: 0.13rem 0.2rem;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+    }
+    .panel-default>.panel-heading {
+        color: #333;
+        background-color: $header-background-color;
+        border-color: $border-color;    
+        border-top-left-radius: 0.3rem;
+        border-top-right-radius: 0.3rem;
+    }
+    .panel {
+        margin-bottom: 0.26rem;
+        background-color: $content-background-color;
+        border-radius: 0.3rem;
+        -webkit-box-shadow: 0rem 0rem 0.8rem $box-shadow;
+        box-shadow: 0rem 0rem 0.8rem $box-shadow;
+        margin: 0.34rem;
+    }
+    h3.header-title {
+        @include font-size(18px);
+        font-family: 'Times New Roman';
+        text-align: center;
+        font-weight: bold;
+        color: $header-text-color;
+        height: 0.7rem;
+        line-height: 0.7rem;
+        margin-bottom: 0;
+    }
+    .panel-body {
+        .search-filter-container {
+            padding: 0.2rem;
+            .search-keyword-container {
+                .input-group {
+                    .form-control {
+                        padding: 0.1rem 0.2rem;
+                        border-color: $input-border-color;
+                        @include font-size(16px);
+                        height: 1rem;
+                        width: 100%;
+                        border-radius: 0.1rem;
+                        &:focus {
+                            box-shadow: 0rem 0rem 0.8rem $box-shadow;
+                        }
+                    }
+                }
+            }
+            .region-filter {
+                .province-container {
+                    height: 0.7rem;
+                    line-height: 0.7rem;
+                }
+            }
+            .search-btn {
+                display: flex;
+                flex-direction: row-reverse;
+                .search-btn-primary {
+                    width: 1.7rem;
+                    text-align: center;
+                    background-color: #89b1e0;
+                    border-color: #89c4f1;
+                    color: #fff;
+                    border-radius: 0.1rem;
+                    @include font-size(16px);
+                    img {
+                        width: 0.6rem;
+                        height: 0.6rem;
+                    }
+                    &:active {
+                        background-color: #799fef;
+                    }
+                }
+            }
+        }
+    }
+}

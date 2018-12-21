@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.wlcx.mapper.XTRegionMapper" >
+  <resultMap id="BaseResultMap" type="com.wx.wlcx.model.XTRegion" >
+    <result column="RGID" property="rgid" jdbcType="NCHAR" />
+    <result column="CPID" property="cpid" jdbcType="NCHAR" />
+    <result column="ST_Pare" property="stPare" jdbcType="NCHAR" />
+    <result column="ST_Tree" property="stTree" jdbcType="NVARCHAR" />
+    <result column="ST_Name" property="stName" jdbcType="NVARCHAR" />
+    <result column="RG_Name" property="rgName" jdbcType="NVARCHAR" />
+    <result column="ST_State" property="stState" jdbcType="INTEGER" />
+    <result column="SX_Locate" property="sxLocate" jdbcType="DOUBLE" />
+    <result column="SY_Locate" property="syLocate" jdbcType="DOUBLE" />
+    <result column="ST_TelCode" property="stTelcode" jdbcType="NVARCHAR" />
+    <result column="ST_ZipCode" property="stZipcode" jdbcType="NCHAR" />
+    <result column="ST_Remark" property="stRemark" jdbcType="NVARCHAR" />
+  </resultMap>
+  <insert id="insert" parameterType="com.wx.wlcx.model.XTRegion" >
+    insert into XT_Region (RGID, CPID, ST_Pare, 
+      ST_Tree, ST_Name, RG_Name, 
+      ST_State, SX_Locate, SY_Locate, 
+      ST_TelCode, ST_ZipCode, ST_Remark
+      )
+    values (#{rgid,jdbcType=NCHAR}, #{cpid,jdbcType=NCHAR}, #{stPare,jdbcType=NCHAR}, 
+      #{stTree,jdbcType=NVARCHAR}, #{stName,jdbcType=NVARCHAR}, #{rgName,jdbcType=NVARCHAR}, 
+      #{stState,jdbcType=INTEGER}, #{sxLocate,jdbcType=DOUBLE}, #{syLocate,jdbcType=DOUBLE}, 
+      #{stTelcode,jdbcType=NVARCHAR}, #{stZipcode,jdbcType=NCHAR}, #{stRemark,jdbcType=NVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wx.wlcx.model.XTRegion" >
+    insert into XT_Region
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="rgid != null" >
+        RGID,
+      </if>
+      <if test="cpid != null" >
+        CPID,
+      </if>
+      <if test="stPare != null" >
+        ST_Pare,
+      </if>
+      <if test="stTree != null" >
+        ST_Tree,
+      </if>
+      <if test="stName != null" >
+        ST_Name,
+      </if>
+      <if test="rgName != null" >
+        RG_Name,
+      </if>
+      <if test="stState != null" >
+        ST_State,
+      </if>
+      <if test="sxLocate != null" >
+        SX_Locate,
+      </if>
+      <if test="syLocate != null" >
+        SY_Locate,
+      </if>
+      <if test="stTelcode != null" >
+        ST_TelCode,
+      </if>
+      <if test="stZipcode != null" >
+        ST_ZipCode,
+      </if>
+      <if test="stRemark != null" >
+        ST_Remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="rgid != null" >
+        #{rgid,jdbcType=NCHAR},
+      </if>
+      <if test="cpid != null" >
+        #{cpid,jdbcType=NCHAR},
+      </if>
+      <if test="stPare != null" >
+        #{stPare,jdbcType=NCHAR},
+      </if>
+      <if test="stTree != null" >
+        #{stTree,jdbcType=NVARCHAR},
+      </if>
+      <if test="stName != null" >
+        #{stName,jdbcType=NVARCHAR},
+      </if>
+      <if test="rgName != null" >
+        #{rgName,jdbcType=NVARCHAR},
+      </if>
+      <if test="stState != null" >
+        #{stState,jdbcType=INTEGER},
+      </if>
+      <if test="sxLocate != null" >
+        #{sxLocate,jdbcType=DOUBLE},
+      </if>
+      <if test="syLocate != null" >
+        #{syLocate,jdbcType=DOUBLE},
+      </if>
+      <if test="stTelcode != null" >
+        #{stTelcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="stZipcode != null" >
+        #{stZipcode,jdbcType=NCHAR},
+      </if>
+      <if test="stRemark != null" >
+        #{stRemark,jdbcType=NVARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="getAll" resultMap="BaseResultMap">
+    SELECT * FROM XT_Region
+  </select>
+</mapper>
