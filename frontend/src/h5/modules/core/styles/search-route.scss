@@ -10,11 +10,11 @@ $box-shadow: #a5bcd4;
     margin: 0.26rem 0 0.26rem 0;
 
     .advert{
-        width: 100%;
+        width: -webkit-fill-available;
         height: 5rem;
         border-radius: 0.5rem;
         box-shadow: 0rem 0rem 0.5rem #a5bcd4;
-        margin: 0.5rem 0;
+        margin: 0.5rem 0.2rem;
     }
 
     .panel-default {
@@ -76,6 +76,7 @@ $box-shadow: #a5bcd4;
                 }
             }
             .search-btn {
+                margin-top: 0.3rem;
                 display: flex;
                 flex-direction: row-reverse;
                 .search-btn-primary {

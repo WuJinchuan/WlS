@@ -57,7 +57,7 @@ app.config([
         let ctrlAs = ''
         let url = config.urlPrefix
         let stateName = `${moduleName}-${key}`
-        let title = titles[key] ? titles[key] : 'Training Project'
+        let title = titles[key] ? titles[key] : '全网物流'
         let templateUrl = `./${moduleName}/partials`
         let needLogin = !!needLoginMap[key]
 
