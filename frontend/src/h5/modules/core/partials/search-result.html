@@ -1,3 +1,5 @@
 <div class="search-result-wrapper">
-  <fm-company-item ng-repeat="company in searchResult.companyResourceList" company="company" ng-click="goToCompanyDetail(company.id)"/>
+  <div class="company-container" ng-repeat="companyItem in companyList">
+    <fm-company-item company="companyItem"/>
+  </div>
 </div>

@@ -1,12 +1,12 @@
 {
-  "name": "newton_training",
+  "name": "quan_wang_wu_liu",
   "version": "1.0.0",
-  "description": "Newton Training",
+  "description": "Quan Wang Wu Liu",
   "scripts": {
     "h5dev": "webpack-dev-server --open --config ./webpack.config.h5.dev.js",
     "h5build": "webpack --config ./webpack.config.h5.prod.js"
   },
-  "author": "Newton Training",
+  "author": "Quan Wang Wu Liu",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",

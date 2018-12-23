@@ -4,6 +4,6 @@ module.exports = {
   forbiddenPage: '/404',
 
   domain: {
-    api: 'http://127.0.0.1:8080'
+    api: 'http://127.0.0.1:18080'
   }
 }

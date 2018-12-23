@@ -1,6 +1,6 @@
 angular.module(
     'app'
-  ).controller('core.SearchRouteController', ['$scope', '$rootScope', '$http', 'restService', '$cookies', '$stateParams', '$timeout', function ($scope, $rootScope, $http, restService, $cookies, $stateParams, $timeout) {
+  ).controller('core.SearchRouteController', ['$scope', '$rootScope', '$http', 'restService', '$cookies', '$stateParams', '$timeout', '$state', function ($scope, $rootScope, $http, restService, $cookies, $stateParams, $timeout, $state) {
     let vm = $scope;
     const SEARCH_BY_KEYWORD = 0;
     const SEARCH_BY_POSITION = 1;
@@ -58,7 +58,6 @@ angular.module(
           $cookies.putObject('searchParams', params)
           $state.go('searchResult')
         }
-        console.log(resp)
       })
     }
 
