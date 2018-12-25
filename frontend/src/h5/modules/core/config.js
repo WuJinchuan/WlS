@@ -9,10 +9,10 @@ module.exports = {
   },
   titles: {
     '404': '404',
-    'home': 'Newton Training',
-    'searchRoute': 'Search Route',
-    'searchResult': 'Search Result',
-    'companyDetail': 'Company Detail'
+    'home': '首页',
+    'searchRoute': '专线查询',
+    'searchResult': '查询结果',
+    'companyDetail': '公司详情'
   },
   resources: {
     
