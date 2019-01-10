@@ -6,7 +6,7 @@
     -webkit-box-shadow: 0.02rem 0.06rem 0.6rem #87959cf0;
     box-shadow: 0.02rem 0.06rem 0.6rem #87959cf0;
     border: 2px solid #d7e0e8;
-    background-color: #e2e4e6;
+    background-color: #eaeff5;
     display: flex;
     justify-content: space-between;
     line-height: 40px;
@@ -14,8 +14,8 @@
     .left-part {
         margin-right: 0.2rem;
         .company-photo {
-            width: 2.3rem;
-            height: 2.3rem;
+            width: 3rem;
+            height: 3rem;
             img {
                 width: inherit;
                 height: inherit;
@@ -24,26 +24,40 @@
         }
     }
     .right-part {
+        color: #3C4452;
         .item-border-bottom {
             border-bottom: 1px solid #bccbda;
             margin-bottom: 0.1rem;
+            line-height: initial;
+        }
+        .nonstop-places-wrapper {
+            .title {
+                color: #777777;
+                @include font-size(14px);
+                font-weight: 600;
+                font-family: fantasy;
+            }
         }
         .company-name-wrapper {
             display: flex;
+            align-items: center;
             .groom-label {
-                display: inline-block;
-                height: fit-content;
                 background-color: #8a9ae6;
                 color: #fff;
                 border-radius: 0.07rem;
                 padding: 0 0.1rem;
+                @include font-size(11px);
+                height: 0.38rem;
+                line-height: 0.38rem;
             }
             .company-name {
                 margin-left: 0.1rem;
+                font-weight: bold;
             }
         }
         .nonstop-route-wrapper {
             display: flex;
+            align-items: center;
             .target-place {
                 .nonstop-label {
                     display: inline-block;
@@ -52,14 +66,15 @@
                     padding: 0 0.1rem;
                     background-color: #a2df9a;
                     margin-left: 0.1rem;
+                    @include font-size(11px);
+                    height: 0.38rem;
+                    line-height: 0.38rem;
                 }
             }
             .chang-icon {
                 img {
                     width: 0.5rem;
                     height: 0.5rem;
-                    display: inline-block;
-                    vertical-align: bottom;
                 }
             }
         }
