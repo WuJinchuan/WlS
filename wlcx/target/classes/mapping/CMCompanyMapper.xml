@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.wlcx.mapper.CMCompanyMapper" >
+  <resultMap id="BaseResultMap" type="com.wx.wlcx.model.CMCompany" >
+  <id column="COID" property="coid" jdbcType="NCHAR" />
+  <result column="NDID" property="ndid" jdbcType="NCHAR" />
+  <result column="CPID" property="cpid" jdbcType="NCHAR" />
+  <result column="CO_Base" property="coBase" jdbcType="INTEGER" />
+  <result column="CO_Type" property="coType" jdbcType="INTEGER" />
+  <result column="LG_Code" property="lgCode" jdbcType="NVARCHAR" />
+  <result column="CO_Name" property="coName" jdbcType="NVARCHAR" />
+  <result column="CO_Addr" property="coAddr" jdbcType="NVARCHAR" />
+  <result column="CO_Time" property="coTime" jdbcType="TIMESTAMP" />
+  <result column="CO_State" property="coState" jdbcType="INTEGER" />
+  <result column="CO_Share" property="coShare" jdbcType="INTEGER" />
+  <result column="CO_Phone" property="coPhone" jdbcType="NVARCHAR" />
+  <result column="CO_Spell" property="coSpell" jdbcType="NVARCHAR" />
+  <result column="CO_Linker" property="coLinker" jdbcType="NVARCHAR" />
+  <result column="CO_LkCode" property="coLkcode" jdbcType="NVARCHAR" />
+  <result column="CO_E_Mail" property="coEMail" jdbcType="NVARCHAR" />
+  <result column="CO_BkType" property="coBktype" jdbcType="INTEGER" />
+  <result column="CO_BkCode" property="coBkcode" jdbcType="NVARCHAR" />
+  <result column="CO_AcName" property="coAcname" jdbcType="NVARCHAR" />
+  <result column="CO_VcType" property="coVctype" jdbcType="NVARCHAR" />
+  <result column="CO_VcName" property="coVcname" jdbcType="NVARCHAR" />
+  <result column="CO_TxCode" property="coTxcode" jdbcType="NVARCHAR" />
+  <result column="CO_BcFate" property="coBcfate" jdbcType="INTEGER" />
+  <result column="CO_Staple" property="coStable" jdbcType="INTEGER" />
+  <result column="CO_VWRate" property="coVwrate" jdbcType="DOUBLE" />
+  <result column="CO_Router" property="coRouter" jdbcType="NVARCHAR" />
+  <result column="CO_Server" property="coServer" jdbcType="NVARCHAR" />
+  <result column="CO_ReMark" property="coRemark" jdbcType="NVARCHAR" />
+  <result column="CO_MapX" property="coMapx" jdbcType="DOUBLE" />
+  <result column="CO_MapY" property="coMapy" jdbcType="DOUBLE" />
+  <result column="CO_LgType" property="coLatype" jdbcType="INTEGER" />
+  <result column="CO_Stars" property="coStarts" jdbcType="INTEGER" />
+  <result column="CO_PicLogo" property="coPiclogo" jdbcType="NVARCHAR" />
+  <result column="CO_Introduction" property="coIntroduction" jdbcType="NVARCHAR" />
+  <result column="CO_Survey" property="coSurvev" jdbcType="NVARCHAR" />
+</resultMap>
+
+  <resultMap id="BaseCompanyMap" type="com.wx.wlcx.model.CMCompany" >
+    <id column="COID" property="coid" jdbcType="NCHAR" />
+    <result column="NDID" property="ndid" jdbcType="NCHAR" />
+    <result column="CPID" property="cpid" jdbcType="NCHAR" />
+    <result column="CO_Base" property="coBase" jdbcType="INTEGER" />
+    <result column="CO_Type" property="coType" jdbcType="INTEGER" />
+    <result column="LG_Code" property="lgCode" jdbcType="NVARCHAR" />
+    <result column="CO_Name" property="coName" jdbcType="NVARCHAR" />
+    <result column="CO_Addr" property="coAddr" jdbcType="NVARCHAR" />
+    <result column="CO_Time" property="coTime" jdbcType="TIMESTAMP" />
+    <result column="CO_State" property="coState" jdbcType="INTEGER" />
+    <result column="CO_Share" property="coShare" jdbcType="INTEGER" />
+    <result column="CO_Phone" property="coPhone" jdbcType="NVARCHAR" />
+    <result column="CO_Spell" property="coSpell" jdbcType="NVARCHAR" />
+    <result column="CO_Linker" property="coLinker" jdbcType="NVARCHAR" />
+    <result column="CO_LkCode" property="coLkcode" jdbcType="NVARCHAR" />
+    <result column="CO_E_Mail" property="coEMail" jdbcType="NVARCHAR" />
+    <result column="CO_BkType" property="coBktype" jdbcType="INTEGER" />
+    <result column="CO_BkCode" property="coBkcode" jdbcType="NVARCHAR" />
+    <result column="CO_AcName" property="coAcname" jdbcType="NVARCHAR" />
+    <result column="CO_VcType" property="coVctype" jdbcType="NVARCHAR" />
+    <result column="CO_VcName" property="coVcname" jdbcType="NVARCHAR" />
+    <result column="CO_TxCode" property="coTxcode" jdbcType="NVARCHAR" />
+    <result column="CO_BcFate" property="coBcfate" jdbcType="INTEGER" />
+    <result column="CO_Staple" property="coStable" jdbcType="INTEGER" />
+    <result column="CO_VWRate" property="coVwrate" jdbcType="DOUBLE" />
+    <result column="CO_Router" property="coRouter" jdbcType="NVARCHAR" />
+    <result column="CO_Server" property="coServer" jdbcType="NVARCHAR" />
+    <result column="CO_ReMark" property="coRemark" jdbcType="NVARCHAR" />
+    <result column="CO_MapX" property="coMapx" jdbcType="DOUBLE" />
+    <result column="CO_MapY" property="coMapy" jdbcType="DOUBLE" />
+    <result column="CO_LgType" property="coLatype" jdbcType="INTEGER" />
+    <result column="CO_Stars" property="coStarts" jdbcType="INTEGER" />
+    <result column="CO_PicLogo" property="coPiclogo" jdbcType="NVARCHAR" />
+    <result column="CO_Introduction" property="coIntroduction" jdbcType="NVARCHAR" />
+    <result column="CO_Survey" property="coSurvev" jdbcType="NVARCHAR" />
+    <collection property="cmMatchers" ofType="CMMatcher" >
+      <id column="CMCOID" property="coid" jdbcType="NCHAR" />
+      <id column="CR_Idx" property="crIdx" jdbcType="INTEGER" />
+      <result column="CR_Mode" property="crMode" jdbcType="INTEGER" />
+      <result column="CT_Mode" property="ctMode" jdbcType="INTEGER" />
+      <result column="CR_Fate" property="crFate" jdbcType="DOUBLE" />
+      <result column="RG_Code" property="rgCode" jdbcType="NVARCHAR" />
+      <result column="RG_Name" property="rgName" jdbcType="NVARCHAR" />
+      <result column="AR_Code" property="arCode" jdbcType="NVARCHAR" />
+      <result column="AR_Name" property="arName" jdbcType="NVARCHAR" />
+      <result column="CM_Code" property="cmCode" jdbcType="NVARCHAR" />
+      <result column="CM_Name" property="cmName" jdbcType="NVARCHAR" />
+      <result column="CR_Addr" property="crAddr" jdbcType="NVARCHAR" />
+      <result column="CR_Style" property="crStyle" jdbcType="INTEGER" />
+      <result column="CR_Grade" property="crGrade" jdbcType="INTEGER" />
+    </collection>
+  </resultMap>
+
+  <sql id="Column_List" >
+    cc.COID, cc.NDID, cc.CPID, cc.CO_Base, cc.CO_Type, cc.LG_Code, cc.CO_Name, cc.CO_Addr, cc.CO_Time, cc.CO_State,
+    cc.CO_Share, cc.CO_Phone, cc.CO_Spell, cc.CO_Linker, cc.CO_LkCode, cc.CO_E_Mail, cc.CO_BkType, cc.CO_BkCode,
+    cc.CO_AcName, cc.CO_VcType, cc.CO_VcName, cc.CO_TxCode, cc.CO_BcFate, cc.CO_Staple, cc.CO_VWRate, cc.CO_Router,
+    cc.CO_Server, cc.CO_ReMark, cc.CO_MapX, cc.CO_MapY, cc.CO_LgType, cc.CO_Stars, cc.CO_PicLogo, cc.CO_Introduction, cc.CO_Survey,
+    cm.COID as CMCOID, cm.CR_Idx, cm.CR_Mode, cm.CT_Mode, cm.CR_Fate, cm.RG_Code, cm.RG_Name,
+    cm.AR_Code, cm.AR_Name, cm.CM_Code, cm.CM_Name, CR_Addr, CR_Style, CR_Grade
+  </sql>
+
+  <sql id="Column_List_Brief" >
+    cc.*,
+    cm.COID as CMCOID, cm.CR_Idx, cm.CR_Mode, cm.CT_Mode, cm.CR_Fate, cm.RG_Code, cm.RG_Name,
+    cm.AR_Code, cm.AR_Name, cm.CM_Code, cm.CM_Name, CR_Addr, CR_Style, CR_Grade
+  </sql>
+
+  <sql id="Base_Column_List" >
+    COID, NDID, CPID, CO_Base, CO_Type, LG_Code, CO_Name, CO_Addr, CO_Time, CO_State, 
+    CO_Share, CO_Phone, CO_Spell, CO_Linker, CO_LkCode, CO_E_Mail, CO_BkType, CO_BkCode, 
+    CO_AcName, CO_VcType, CO_VcName, CO_TxCode, CO_BcFate, CO_Staple, CO_VWRate, CO_Router, 
+    CO_Server, CO_ReMark, CO_MapX, CO_MapY, CO_LgType, CO_Stars, CO_PicLogo, CO_Introduction, 
+    CO_Survey
+  </sql>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from CM_Company
+    where COID = #{coid,jdbcType=NCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from CM_Company
+    where COID = #{coid,jdbcType=NCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wx.wlcx.model.CMCompany" >
+    insert into CM_Company (COID, NDID, CPID, CO_Base, 
+      CO_Type, LG_Code, CO_Name, 
+      CO_Addr, CO_Time, CO_State, 
+      CO_Share, CO_Phone, CO_Spell, 
+      CO_Linker, CO_LkCode, CO_E_Mail, 
+      CO_BkType, CO_BkCode, CO_AcName, 
+      CO_VcType, CO_VcName, CO_TxCode, 
+      CO_BcFate, CO_Staple, CO_VWRate, 
+      CO_Router, CO_Server, CO_ReMark, 
+      CO_MapX, CO_MapY, CO_LgType, 
+      CO_Stars, CO_PicLogo, CO_Introduction, 
+      CO_Survey)
+    values (#{coid,jdbcType=NCHAR}, #{ndid,jdbcType=NCHAR}, #{cpid,jdbcType=NCHAR}, #{coBase,jdbcType=INTEGER}, 
+      #{coType,jdbcType=INTEGER}, #{lgCode,jdbcType=NVARCHAR}, #{coName,jdbcType=NVARCHAR}, 
+      #{coAddr,jdbcType=NVARCHAR}, #{coTime,jdbcType=TIMESTAMP}, #{coState,jdbcType=INTEGER}, 
+      #{coShare,jdbcType=INTEGER}, #{coPhone,jdbcType=NVARCHAR}, #{coSpell,jdbcType=NVARCHAR}, 
+      #{coLinker,jdbcType=NVARCHAR}, #{coLkcode,jdbcType=NVARCHAR}, #{coEMail,jdbcType=NVARCHAR}, 
+      #{coBktype,jdbcType=INTEGER}, #{coBkcode,jdbcType=NVARCHAR}, #{coAcname,jdbcType=NVARCHAR}, 
+      #{coVctype,jdbcType=NVARCHAR}, #{coVcname,jdbcType=NVARCHAR}, #{coTxcode,jdbcType=NVARCHAR}, 
+      #{coBcfate,jdbcType=INTEGER}, #{coStable,jdbcType=INTEGER}, #{coVwrate,jdbcType=DOUBLE}, 
+      #{coRouter,jdbcType=NVARCHAR}, #{coServer,jdbcType=NVARCHAR}, #{coRemark,jdbcType=NVARCHAR}, 
+      #{coMapx,jdbcType=DOUBLE}, #{coMapy,jdbcType=DOUBLE}, #{coLatype,jdbcType=INTEGER}, 
+      #{coStarts,jdbcType=INTEGER}, #{coPiclogo,jdbcType=NVARCHAR}, #{coIntroduction,jdbcType=NVARCHAR}, 
+      #{coSurvev,jdbcType=NVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wx.wlcx.model.CMCompany" >
+    insert into CM_Company
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="coid != null" >
+        COID,
+      </if>
+      <if test="ndid != null" >
+        NDID,
+      </if>
+      <if test="cpid != null" >
+        CPID,
+      </if>
+      <if test="coBase != null" >
+        CO_Base,
+      </if>
+      <if test="coType != null" >
+        CO_Type,
+      </if>
+      <if test="lgCode != null" >
+        LG_Code,
+      </if>
+      <if test="coName != null" >
+        CO_Name,
+      </if>
+      <if test="coAddr != null" >
+        CO_Addr,
+      </if>
+      <if test="coTime != null" >
+        CO_Time,
+      </if>
+      <if test="coState != null" >
+        CO_State,
+      </if>
+      <if test="coShare != null" >
+        CO_Share,
+      </if>
+      <if test="coPhone != null" >
+        CO_Phone,
+      </if>
+      <if test="coSpell != null" >
+        CO_Spell,
+      </if>
+      <if test="coLinker != null" >
+        CO_Linker,
+      </if>
+      <if test="coLkcode != null" >
+        CO_LkCode,
+      </if>
+      <if test="coEMail != null" >
+        CO_E_Mail,
+      </if>
+      <if test="coBktype != null" >
+        CO_BkType,
+      </if>
+      <if test="coBkcode != null" >
+        CO_BkCode,
+      </if>
+      <if test="coAcname != null" >
+        CO_AcName,
+      </if>
+      <if test="coVctype != null" >
+        CO_VcType,
+      </if>
+      <if test="coVcname != null" >
+        CO_VcName,
+      </if>
+      <if test="coTxcode != null" >
+        CO_TxCode,
+      </if>
+      <if test="coBcfate != null" >
+        CO_BcFate,
+      </if>
+      <if test="coStable != null" >
+        CO_Staple,
+      </if>
+      <if test="coVwrate != null" >
+        CO_VWRate,
+      </if>
+      <if test="coRouter != null" >
+        CO_Router,
+      </if>
+      <if test="coServer != null" >
+        CO_Server,
+      </if>
+      <if test="coRemark != null" >
+        CO_ReMark,
+      </if>
+      <if test="coMapx != null" >
+        CO_MapX,
+      </if>
+      <if test="coMapy != null" >
+        CO_MapY,
+      </if>
+      <if test="coLatype != null" >
+        CO_LgType,
+      </if>
+      <if test="coStarts != null" >
+        CO_Stars,
+      </if>
+      <if test="coPiclogo != null" >
+        CO_PicLogo,
+      </if>
+      <if test="coIntroduction != null" >
+        CO_Introduction,
+      </if>
+      <if test="coSurvev != null" >
+        CO_Survey,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="coid != null" >
+        #{coid,jdbcType=NCHAR},
+      </if>
+      <if test="ndid != null" >
+        #{ndid,jdbcType=NCHAR},
+      </if>
+      <if test="cpid != null" >
+        #{cpid,jdbcType=NCHAR},
+      </if>
+      <if test="coBase != null" >
+        #{coBase,jdbcType=INTEGER},
+      </if>
+      <if test="coType != null" >
+        #{coType,jdbcType=INTEGER},
+      </if>
+      <if test="lgCode != null" >
+        #{lgCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coName != null" >
+        #{coName,jdbcType=NVARCHAR},
+      </if>
+      <if test="coAddr != null" >
+        #{coAddr,jdbcType=NVARCHAR},
+      </if>
+      <if test="coTime != null" >
+        #{coTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="coState != null" >
+        #{coState,jdbcType=INTEGER},
+      </if>
+      <if test="coShare != null" >
+        #{coShare,jdbcType=INTEGER},
+      </if>
+      <if test="coPhone != null" >
+        #{coPhone,jdbcType=NVARCHAR},
+      </if>
+      <if test="coSpell != null" >
+        #{coSpell,jdbcType=NVARCHAR},
+      </if>
+      <if test="coLinker != null" >
+        #{coLinker,jdbcType=NVARCHAR},
+      </if>
+      <if test="coLkcode != null" >
+        #{coLkcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coEMail != null" >
+        #{coEMail,jdbcType=NVARCHAR},
+      </if>
+      <if test="coBktype != null" >
+        #{coBktype,jdbcType=INTEGER},
+      </if>
+      <if test="coBkcode != null" >
+        #{coBkcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coAcname != null" >
+        #{coAcname,jdbcType=NVARCHAR},
+      </if>
+      <if test="coVctype != null" >
+        #{coVctype,jdbcType=NVARCHAR},
+      </if>
+      <if test="coVcname != null" >
+        #{coVcname,jdbcType=NVARCHAR},
+      </if>
+      <if test="coTxcode != null" >
+        #{coTxcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coBcfate != null" >
+        #{coBcfate,jdbcType=INTEGER},
+      </if>
+      <if test="coStable != null" >
+        #{coStable,jdbcType=INTEGER},
+      </if>
+      <if test="coVwrate != null" >
+        #{coVwrate,jdbcType=DOUBLE},
+      </if>
+      <if test="coRouter != null" >
+        #{coRouter,jdbcType=NVARCHAR},
+      </if>
+      <if test="coServer != null" >
+        #{coServer,jdbcType=NVARCHAR},
+      </if>
+      <if test="coRemark != null" >
+        #{coRemark,jdbcType=NVARCHAR},
+      </if>
+      <if test="coMapx != null" >
+        #{coMapx,jdbcType=DOUBLE},
+      </if>
+      <if test="coMapy != null" >
+        #{coMapy,jdbcType=DOUBLE},
+      </if>
+      <if test="coLatype != null" >
+        #{coLatype,jdbcType=INTEGER},
+      </if>
+      <if test="coStarts != null" >
+        #{coStarts,jdbcType=INTEGER},
+      </if>
+      <if test="coPiclogo != null" >
+        #{coPiclogo,jdbcType=NVARCHAR},
+      </if>
+      <if test="coIntroduction != null" >
+        #{coIntroduction,jdbcType=NVARCHAR},
+      </if>
+      <if test="coSurvev != null" >
+        #{coSurvev,jdbcType=NVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wx.wlcx.model.CMCompany" >
+    update CM_Company
+    <set >
+      <if test="ndid != null" >
+        NDID = #{ndid,jdbcType=NCHAR},
+      </if>
+      <if test="cpid != null" >
+        CPID = #{cpid,jdbcType=NCHAR},
+      </if>
+      <if test="coBase != null" >
+        CO_Base = #{coBase,jdbcType=INTEGER},
+      </if>
+      <if test="coType != null" >
+        CO_Type = #{coType,jdbcType=INTEGER},
+      </if>
+      <if test="lgCode != null" >
+        LG_Code = #{lgCode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coName != null" >
+        CO_Name = #{coName,jdbcType=NVARCHAR},
+      </if>
+      <if test="coAddr != null" >
+        CO_Addr = #{coAddr,jdbcType=NVARCHAR},
+      </if>
+      <if test="coTime != null" >
+        CO_Time = #{coTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="coState != null" >
+        CO_State = #{coState,jdbcType=INTEGER},
+      </if>
+      <if test="coShare != null" >
+        CO_Share = #{coShare,jdbcType=INTEGER},
+      </if>
+      <if test="coPhone != null" >
+        CO_Phone = #{coPhone,jdbcType=NVARCHAR},
+      </if>
+      <if test="coSpell != null" >
+        CO_Spell = #{coSpell,jdbcType=NVARCHAR},
+      </if>
+      <if test="coLinker != null" >
+        CO_Linker = #{coLinker,jdbcType=NVARCHAR},
+      </if>
+      <if test="coLkcode != null" >
+        CO_LkCode = #{coLkcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coEMail != null" >
+        CO_E_Mail = #{coEMail,jdbcType=NVARCHAR},
+      </if>
+      <if test="coBktype != null" >
+        CO_BkType = #{coBktype,jdbcType=INTEGER},
+      </if>
+      <if test="coBkcode != null" >
+        CO_BkCode = #{coBkcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coAcname != null" >
+        CO_AcName = #{coAcname,jdbcType=NVARCHAR},
+      </if>
+      <if test="coVctype != null" >
+        CO_VcType = #{coVctype,jdbcType=NVARCHAR},
+      </if>
+      <if test="coVcname != null" >
+        CO_VcName = #{coVcname,jdbcType=NVARCHAR},
+      </if>
+      <if test="coTxcode != null" >
+        CO_TxCode = #{coTxcode,jdbcType=NVARCHAR},
+      </if>
+      <if test="coBcfate != null" >
+        CO_BcFate = #{coBcfate,jdbcType=INTEGER},
+      </if>
+      <if test="coStable != null" >
+        CO_Staple = #{coStable,jdbcType=INTEGER},
+      </if>
+      <if test="coVwrate != null" >
+        CO_VWRate = #{coVwrate,jdbcType=DOUBLE},
+      </if>
+      <if test="coRouter != null" >
+        CO_Router = #{coRouter,jdbcType=NVARCHAR},
+      </if>
+      <if test="coServer != null" >
+        CO_Server = #{coServer,jdbcType=NVARCHAR},
+      </if>
+      <if test="coRemark != null" >
+        CO_ReMark = #{coRemark,jdbcType=NVARCHAR},
+      </if>
+      <if test="coMapx != null" >
+        CO_MapX = #{coMapx,jdbcType=DOUBLE},
+      </if>
+      <if test="coMapy != null" >
+        CO_MapY = #{coMapy,jdbcType=DOUBLE},
+      </if>
+      <if test="coLatype != null" >
+        CO_LgType = #{coLatype,jdbcType=INTEGER},
+      </if>
+      <if test="coStarts != null" >
+        CO_Stars = #{coStarts,jdbcType=INTEGER},
+      </if>
+      <if test="coPiclogo != null" >
+        CO_PicLogo = #{coPiclogo,jdbcType=NVARCHAR},
+      </if>
+      <if test="coIntroduction != null" >
+        CO_Introduction = #{coIntroduction,jdbcType=NVARCHAR},
+      </if>
+      <if test="coSurvev != null" >
+        CO_Survey = #{coSurvev,jdbcType=NVARCHAR},
+      </if>
+    </set>
+    where COID = #{coid,jdbcType=NCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wx.wlcx.model.CMCompany" >
+    update CM_Company
+    set NDID = #{ndid,jdbcType=NCHAR},
+      CPID = #{cpid,jdbcType=NCHAR},
+      CO_Base = #{coBase,jdbcType=INTEGER},
+      CO_Type = #{coType,jdbcType=INTEGER},
+      LG_Code = #{lgCode,jdbcType=NVARCHAR},
+      CO_Name = #{coName,jdbcType=NVARCHAR},
+      CO_Addr = #{coAddr,jdbcType=NVARCHAR},
+      CO_Time = #{coTime,jdbcType=TIMESTAMP},
+      CO_State = #{coState,jdbcType=INTEGER},
+      CO_Share = #{coShare,jdbcType=INTEGER},
+      CO_Phone = #{coPhone,jdbcType=NVARCHAR},
+      CO_Spell = #{coSpell,jdbcType=NVARCHAR},
+      CO_Linker = #{coLinker,jdbcType=NVARCHAR},
+      CO_LkCode = #{coLkcode,jdbcType=NVARCHAR},
+      CO_E_Mail = #{coEMail,jdbcType=NVARCHAR},
+      CO_BkType = #{coBktype,jdbcType=INTEGER},
+      CO_BkCode = #{coBkcode,jdbcType=NVARCHAR},
+      CO_AcName = #{coAcname,jdbcType=NVARCHAR},
+      CO_VcType = #{coVctype,jdbcType=NVARCHAR},
+      CO_VcName = #{coVcname,jdbcType=NVARCHAR},
+      CO_TxCode = #{coTxcode,jdbcType=NVARCHAR},
+      CO_BcFate = #{coBcfate,jdbcType=INTEGER},
+      CO_Staple = #{coStable,jdbcType=INTEGER},
+      CO_VWRate = #{coVwrate,jdbcType=DOUBLE},
+      CO_Router = #{coRouter,jdbcType=NVARCHAR},
+      CO_Server = #{coServer,jdbcType=NVARCHAR},
+      CO_ReMark = #{coRemark,jdbcType=NVARCHAR},
+      CO_MapX = #{coMapx,jdbcType=DOUBLE},
+      CO_MapY = #{coMapy,jdbcType=DOUBLE},
+      CO_LgType = #{coLatype,jdbcType=INTEGER},
+      CO_Stars = #{coStarts,jdbcType=INTEGER},
+      CO_PicLogo = #{coPiclogo,jdbcType=NVARCHAR},
+      CO_Introduction = #{coIntroduction,jdbcType=NVARCHAR},
+      CO_Survey = #{coSurvev,jdbcType=NVARCHAR}
+    where COID = #{coid,jdbcType=NCHAR}
+  </update>
+
+  <select id="findCompany" resultMap="BaseCompanyMap" >
+    select
+    <include refid="Column_List"/>
+    from CM_Company cc left join CM_Matcher cm on cc.coid = cm.coid
+    <where>
+      <if test="keyword != null">
+        cc.CO_Name like '%${keyword}%'
+      </if>
+
+      <if test="arCode != null">
+        or cm.AR_Code = #{arCode}
+      </if>
+
+      <if test="arName != null">
+       and cm.AR_Name like '%${arName}%'
+      </if>
+    </where>
+      ORDER BY cm.CR_Style
+  </select>
+
+  <select id="findCompanyDetail" parameterType="String" resultMap="BaseCompanyMap">
+    SELECT
+    <include refid="Column_List"/>
+    FROM CM_Company cc LEFT JOIN CM_Matcher cm ON cc.COID = cm.COID
+      where cc.COID = #{coId}
+  </select>
+</mapper>

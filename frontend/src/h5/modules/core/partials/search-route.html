@@ -21,16 +21,21 @@
         </div>
     </div>
 
-    <img class="advert" src="../.././../images/advert.jpg">
+    <div class="advert-container">
+        <img class="advert" src="../.././../images/advert.jpg">
+    </div>
+    <div class="advert-container">
+        <img class="advert" src="../.././../images/advert.jpg">
+    </div>
 
     <script type="text/ng-template" id="search-by-name.html">
         <div class="search-keyword-container">
             <div class="input-group">
-                <input type="text" placeholder="请输入物流公司名称" class="form-control">
+                <input type="text" ng-model="searchParams.keyword" placeholder="请输入物流公司名称" class="form-control">
             </div>
         </div>
         <div class="search-btn">
-            <div class="search-btn-primary">
+            <div class="search-btn-primary" ng-click="onSearchAction()">
                 <img src="../../../images/search-icon.svg"/>搜索
             </div>
         </div>
@@ -41,8 +46,8 @@
             <div class="province-container">请选择省份<city-picker/></div>
             <div class="city-container">请选择市<city-picker/></div>
         </div>
-        <div class="search-btn">
-            <div class="search-btn-primary">
+        <div class="search-btn" ng-click="onSearchAction()">
+            <div class="search-btn-primary" ng-click="onSearchAction()">
                 <img src="../../../images/search-icon.svg"/>搜索
             </div>
         </div>

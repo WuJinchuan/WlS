@@ -8,13 +8,14 @@ $box-shadow: #a5bcd4;
 
 .search-route-page{
     margin: 0.26rem 0 0.26rem 0;
-
-    .advert{
-        width: 100%;
-        height: 5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0rem 0rem 0.5rem #a5bcd4;
-        margin: 0.5rem 0;
+    .advert-container{
+        margin: 0.5rem 0.2rem;
+        .advert{
+            width: 100%;
+            height: 5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0rem 0rem 0.5rem #a5bcd4;
+        }
     }
 
     .panel-default {
@@ -54,6 +55,12 @@ $box-shadow: #a5bcd4;
     .panel-body {
         .search-filter-container {
             padding: 0.2rem;
+            .swiper-button-prev, .swiper-button-next {
+                background-size: 0.36rem 0.58rem;
+                width: 0.36rem;
+                height: 0.58rem;
+            }
+
             .search-keyword-container {
                 .input-group {
                     .form-control {
@@ -76,6 +83,7 @@ $box-shadow: #a5bcd4;
                 }
             }
             .search-btn {
+                margin-top: 0.3rem;
                 display: flex;
                 flex-direction: row-reverse;
                 .search-btn-primary {

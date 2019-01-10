@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wx.wlcx.mapper.ADPictureMapper" >
+  <resultMap id="BaseResultMap" type="com.wx.wlcx.model.ADPicture" >
+    <result column="ADID" property="adid" jdbcType="NVARCHAR" />
+    <result column="COID" property="coid" jdbcType="NCHAR" />
+    <result column="AD_Type" property="adType" jdbcType="INTEGER" />
+    <result column="AD_Image" property="adImage" jdbcType="NVARCHAR" />
+    <result column="AD_ReMark" property="adRemark" jdbcType="NVARCHAR" />
+  </resultMap>
+
+  <resultMap id="ResultMapWithBLOBs" type="com.wx.wlcx.model.ADPicture" extends="BaseResultMap" >
+    <result column="AD_Icon" property="adIcon" jdbcType="LONGVARBINARY" />
+  </resultMap>
+
+  <sql id="Blob_Column_List" >
+    AD_Icon
+  </sql>
+
+ <select id="getAll" resultMap="ResultMapWithBLOBs">
+   SELECT * FROM AD_Picture
+ </select>
+
+  <select id="findOnePage" resultMap="ResultMapWithBLOBs">
+    SELECT * FROM AD_Picture ORDER BY ADID
+  </select>
+</mapper>
