@@ -1,5 +1,9 @@
 <div class="search-result-wrapper">
-  <div class="company-container" ng-repeat="companyItem in companyList">
+  <div class="company-container" ng-if="companyList != undefined && companyList.length != 0" ng-repeat="companyItem in companyList">
     <fm-company-item company="companyItem"/>
+  </div>
+  <div ng-if="companyList == undefined || companyList.length == 0" class="no-result">
+    <p>暂未搜索到相关公司</p>
+    <span ng-click="goBackSearchPage()">请返回重新查询</span>
   </div>
 </div>

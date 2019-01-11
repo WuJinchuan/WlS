@@ -9,11 +9,17 @@ angular.module(
       return;
     }
 
-    vm.companyList = $cookies.getObject('searchResult')['companyResourceList'];
-    vm.searchParams = $cookies.getObject('searchParams');
-    
-    $cookies.remove('searchResult')
-    $cookies.remove('searchParams')
+    if ($cookies.getObject('searchResult') != undefined && $cookies.getObject('searchParams') != undefined) {
+      vm.companyList = $cookies.getObject('searchResult')['companyResourceList'];
+      vm.searchParams = $cookies.getObject('searchParams');
+      $cookies.remove('searchResult')
+      $cookies.remove('searchParams')
+    }
+
+  }
+
+  vm.goBackSearchPage = () => {
+    $state.go('searchRoute');
   }
 
   init()

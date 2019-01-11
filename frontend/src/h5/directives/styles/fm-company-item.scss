@@ -59,11 +59,15 @@
             display: flex;
             align-items: center;
             .target-place {
+                height: inherit;
                 .nonstop-label {
                     display: inline-block;
+                    vertical-align: middle;
                     color: #fff;
                     border-radius: 0.07rem;
                     padding: 0 0.1rem;
+                    height: 0.55rem;
+                    line-height: 0.55rem;
                     background-color: #a2df9a;
                     margin-left: 0.1rem;
                     @include font-size(11px);
