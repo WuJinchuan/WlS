@@ -16,7 +16,7 @@
             :
           </label>
           <div class="value">
-            <div class="left-value">金盛运物流有限公司</div>
+            <div class="left-value" ng-bind="isNotEmpty(companyDetail.companyName) ? companyDetail.companyName : '匿名'"></div>
           </div>
         </div>
         <div class="product-field">
@@ -25,7 +25,7 @@
                 <div class="chang-icon"><img src="../../../images/mobile-phone.svg"></div>
                 :
             </label>
-            <div class="value">11111111111</div>
+            <div class="value" ng-bind="isNotEmpty(companyDetail.mobilePhone) ? companyDetail.mobilePhone : '暂未设置'"></div>
         </div>
         <div class="product-field">
             <label class="filed-label">
@@ -33,7 +33,7 @@
                 <div class="chang-icon"><img src="../../../images/local-phone.svg"></div>
                 :
             </label>
-            <div class="value">0000000000</div>
+            <div class="value" ng-bind="isNotEmpty(companyDetail.phone) ? companyDetail.phone : '暂未设置'"></div>
         </div>
         <div class="product-field">
                 <label class="filed-label">
@@ -41,7 +41,7 @@
                     <div class="chang-icon"><img src="../../../images/position.svg"></div>
                     :
                 </label>
-            <div class="value">中山市东凤镇天润物流市场第22栋</div>
+            <div class="value" ng-bind="isNotEmpty(companyDetail.companyAddr) ? companyDetail.companyAddr : '暂未设置'">中山市东凤镇天润物流市场第22栋</div>
         </div>
 
         <div class="shipping-container">
@@ -59,11 +59,11 @@
             <div id="shipping-detail" class="shipping-detail hideDetail">
               <div class="nonstop-places-wrapper item-border-bottom">
                   <span class="title">直达: </span>
-                  成都,四川，湖北，武汉
+                  <span ng-bind="isNotEmpty(nonStopPlaces) ? nonStopPlaces : '暂无业务范围'"></span>
               </div>
               <div class="nonstop-places-wrapper item-border-bottom">
                   <span class="title">中转: </span>
-                  成都,四川，湖北，武汉
+                  <span ng-bind="isNotEmpty(transferPlaces) ? transferPlaces : '暂无业务范围'"></span>
               </div>
             </div>
           </div> 
@@ -80,7 +80,7 @@
           <div class="picture-help-text" ng-if="false">商家暂未上传商品展示图</div>
           <img src="../../../images/sample1.jpg" ng-if="true" />
           <img src="../../../images/sample2.jpg" ng-if="true" />
-          <div class="description-text">请在下面的文本框内输入文字,然后点击开始翻译按钮进行翻译,如果您看不到结果,请重新翻译! 是否有固定的物流路线 选择语言:从 到 翻译..</div>
+          <div class="description-text" ng-bind="{{companyDetaildetailIntroduction}}"></div>
         </div>
       </div>
 
