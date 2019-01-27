@@ -8,11 +8,23 @@ angular.module(
     let pageSize = 20;
     let swiper;
 
+    vm.showLoadingIcon = false;
     vm.searchParams = {
       keyword: '',
       arCode:'',
-      arName: ''
+      arName: '',
+      region: []      
     };
+
+    vm.regionPickerOptions = {
+      mustSelectAll: false,
+      isShowPicker: false,
+      outsidePickedRegionName: '未选定地区',
+    }
+
+    vm.triggerRegionPicker = () => {
+      vm.regionPickerOptions.isShowPicker = true
+    }
 
     $timeout(() => {
       swiper = new Swiper('.search-filter-container', {
@@ -39,30 +51,44 @@ angular.module(
           keyword: vm.searchParams.keyword
         }
       } else {
-        //暂时禁用此功能
-        return;
-
+        let selectedRegions = vm.searchParams.region;
+        if(selectedRegions.length > 0) {
+          vm.searchParams.arCode = selectedRegions[selectedRegions.length - 1].rgid
+        }
         params = {
-          arCode: vm.searchParams.arCode,
-          arName: vm.searchParams.arName
+          arCode: vm.searchParams.arCode
         }
       }
 
+      vm.showLoadingIcon = true;
       restService.http({
         url: `/search/${pageNum}/${pageSize}/company`,
         method: 'GET',
         params: params
       }).then((resp) => {
         if (resp.status == 200) {
-          $cookies.putObject('searchResult', resp.data.result)
-          $cookies.putObject('searchParams', params)
-          $state.go('searchResult')
+          $rootScope.searchResult = resp.data.result
+          $rootScope.searchParams = params
+        }
+        $state.go('searchResult')
+        vm.showLoadingIcon = false;
+      })
+    }
+
+    const getADInfo = () => {
+      restService.http({
+        url: '/getAllAd',
+        method: 'GET',
+        params: {}
+      }).then((resp) => {
+        if (resp.status == 200) {
+          $scope.adResult = resp.data.result
         }
       })
     }
 
     const init = () => {
-      //get region
+      getADInfo()
     }
 
     init()

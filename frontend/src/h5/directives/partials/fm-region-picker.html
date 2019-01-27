@@ -1,6 +1,6 @@
 <div class="fm-region-picker">
-  <div class="region-input" ng-click="triggerPicker()">
-    <span class="region-name" ng-bind="pickedRegionName"></span>
+  <div class="region-input" ng-if="outsidePickedRegionName == undefined" ng-click="triggerPicker()">
+    <span class="region-name" ng-bind="insidePickedRegionName"></span>
   </div>
 
   <div class="picker-wrapper" ng-show="isShowPicker">
@@ -8,12 +8,12 @@
     <div class="picker">
       <div class="picker-header">
         <span class="region-name" ng-bind="pickingRegionName"></span>
-        <span class="finish" ng-if="mustSelectAll == 'false'" ng-click="finish()">确定</span>
+        <span class="finish" ng-if="!mustSelectAll" ng-click="finish()">确定</span>
       </div>
       <div class="picker-content">
         <p class="picker-loading" ng-if="isLoading">正在加载...</p>
         <ul>
-          <li class="picker-item" ng-repeat="region in pickList" ng-click="pickRegion(region)" ng-bind="region.regionName"></li>
+          <li class="picker-item" ng-repeat="region in pickList" ng-click="pickRegion(region)" ng-bind="region.rg_Name"></li>
         </ul>
       </div>
       <div class="picker-footer" ng-click="cancel()">

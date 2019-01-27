@@ -25,18 +25,19 @@ angular.module(
           vm.nonStopPlaces = '';
           vm.transferPlaces = '';
           angular.forEach(vm.companyDetail.mathcerList, (matcher) => {
-            var place = matcher.arName;
+            let place = matcher.arName;
+            let placesArr = place.split("-");
             if (matcher.style == NON_STOP_CODE) {
               if (!vm.isNotEmpty(vm.nonStopPlaces)) {
-                vm.nonStopPlaces += place.split("-")[1]
+                vm.nonStopPlaces += placesArr[placesArr.length-1]
               } else {
-                vm.nonStopPlaces += ("," +place.split("-")[1])
+                vm.nonStopPlaces += ("," +placesArr[placesArr.length-1])
               }
             } else {
               if (!vm.isNotEmpty(vm.transferPlaces)) {
-                vm.transferPlaces +=place.split("-")[1]
+                vm.transferPlaces +=placesArr[placesArr.length-1]
               } else {
-                vm.transferPlaces += (", " +place.split("-")[1])
+                vm.transferPlaces += (", " +placesArr[placesArr.length-1])
               }
             }
           });

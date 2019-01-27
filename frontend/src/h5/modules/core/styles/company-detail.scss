@@ -160,6 +160,11 @@
             border-bottom: 1px solid #bccbda;
             margin-bottom: 0.1rem;
           }
+          .nonstop-places-wrapper {
+            .places-list {
+              @include font-size(12px);
+            }
+          }
         }
       }
     }

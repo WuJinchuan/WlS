@@ -1,5 +1,8 @@
 package com.wx.wlcx.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class XTRegion {
     private String rgid;
 
@@ -24,6 +27,8 @@ public class XTRegion {
     private String stZipcode;
 
     private String stRemark;
+
+    private List<XTRegion> regions = new ArrayList<>();
 
     public String getRgid() {
         return rgid;
@@ -119,5 +124,13 @@ public class XTRegion {
 
     public void setStRemark(String stRemark) {
         this.stRemark = stRemark == null ? null : stRemark.trim();
+    }
+
+    public List<XTRegion> getRegions() {
+        return regions;
+    }
+
+    public void setRegions(List<XTRegion> regions) {
+        this.regions = regions;
     }
 }

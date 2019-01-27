@@ -1,6 +1,7 @@
 com\wx\wlcx\mapper\ADPictureMapper.class
 com\wx\wlcx\mapper\XTRegionMapper.class
 com\wx\wlcx\service\MatcherService.class
+com\wx\wlcx\service\RegionService.class
 com\wx\wlcx\utils\RequestUtil.class
 com\wx\wlcx\model\CMCompany.class
 com\wx\wlcx\resource\XTRegionResource.class
@@ -29,5 +30,6 @@ com\wx\wlcx\model\CMMatcher.class
 com\wx\wlcx\controller\IndexController.class
 com\wx\wlcx\po\CMMatcher.class
 com\wx\wlcx\resource\XTRegionResource$XTRegionList.class
+com\wx\wlcx\service\impl\RegionServiceImpl.class
 com\wx\wlcx\WlcxApplication.class
 com\wx\wlcx\config\DruidConfig.class

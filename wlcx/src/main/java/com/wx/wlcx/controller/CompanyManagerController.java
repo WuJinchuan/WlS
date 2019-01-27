@@ -43,7 +43,7 @@ public class CompanyManagerController {
             @ApiResponse(code = 404, message = "page not found")
     })
     public ResponseEntity<JsonResult> findCompany(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize,
-                                                  @RequestParam(value = "keyword", required = false, defaultValue = "") String keyword,
+                                                  @RequestParam(value = "keyword", required = false) String keyword,
                                                   @RequestParam(value = "arCode", required = false) String arCode,
                                                   @RequestParam(value = "arName", required = false)  String arName){
     logger.info(String.format("get one page company, pageSize: %d, page: %d", pageNum, pageSize));

@@ -18,15 +18,7 @@ public class CompanyServiceImpl implements CompanyService {
     private final static Logger logger = LoggerFactory.getLogger(CompanyServiceImpl.class);
 
     @Autowired
-    private XTRegionMapper xtRegionMapper;
-    @Autowired
     private CMCompanyMapper cmCompanyMapper;
-
-    @Override
-    public List<XTRegion> getAllRegion() {
-        logger.info("getAllRegion");
-        return xtRegionMapper.getAll();
-    }
 
     @Override
     public List<CMCompany> findCompany(int pageSize, int pageNum, String keyword, String arCode, String arName) {

@@ -80,6 +80,12 @@ $box-shadow: #a5bcd4;
                 .province-container {
                     height: 0.7rem;
                     line-height: 0.7rem;
+                    .region-input {
+                        height: 100%;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
                 }
             }
             .search-btn {

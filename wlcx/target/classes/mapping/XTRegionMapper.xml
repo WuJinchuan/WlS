@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.wx.wlcx.mapper.XTRegionMapper" >
+  <cache
+          eviction="FIFO"
+          flushInterval="3600000"
+          size="1024"
+          readOnly="true" />
+
   <resultMap id="BaseResultMap" type="com.wx.wlcx.model.XTRegion" >
     <result column="RGID" property="rgid" jdbcType="NCHAR" />
     <result column="CPID" property="cpid" jdbcType="NCHAR" />
@@ -14,6 +20,8 @@
     <result column="ST_TelCode" property="stTelcode" jdbcType="NVARCHAR" />
     <result column="ST_ZipCode" property="stZipcode" jdbcType="NCHAR" />
     <result column="ST_Remark" property="stRemark" jdbcType="NVARCHAR" />
+    <collection property="regions" javaType="java.util.ArrayList" column="RGID"
+                ofType="com.wx.wlcx.model.XTRegion" select="findSubRegion"></collection>
   </resultMap>
   <insert id="insert" parameterType="com.wx.wlcx.model.XTRegion" >
     insert into XT_Region (RGID, CPID, ST_Pare, 
@@ -107,7 +115,27 @@
     </trim>
   </insert>
 
-  <select id="getAll" resultMap="BaseResultMap">
+  <sql id="selectSQL">
+    <![CDATA[
+        SELECT * FROM XT_Region
+    ]]>
+  </sql>
+
+  <select id="findSubRegion" resultMap="BaseResultMap" useCache="true">
+    <include refid="selectSQL"/>
+    <![CDATA[
+            WHERE ST_Pare = #{id} ORDER BY RGID ASC
+        ]]>
+  </select>
+
+  <select id="findRegionTree" resultMap="BaseResultMap" useCache="true">
+    <include refid="selectSQL"/>
+    <![CDATA[
+            WHERE ST_Pare IS NULL ORDER BY RGID ASC
+        ]]>
+  </select>
+
+  <select id="getAll" resultMap="BaseResultMap" useCache="true">
     SELECT * FROM XT_Region
   </select>
 </mapper>

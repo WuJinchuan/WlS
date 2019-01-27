@@ -18,7 +18,7 @@ public interface CMCompanyMapper {
 
     int updateByPrimaryKey(CMCompany record);
 
-    List<CMCompany> findCompany(@Param("keyword") String keyword, @Param("arName") String arName, @Param("arCode") String arCode);
+    List<CMCompany> findCompany(@Param("keyword") String keyword, @Param("arCode") String arCode, @Param("arName") String arName);
 
     CMCompany findCompanyDetail(String coId);
 }

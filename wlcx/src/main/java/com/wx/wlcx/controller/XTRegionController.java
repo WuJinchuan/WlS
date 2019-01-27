@@ -3,6 +3,7 @@ package com.wx.wlcx.controller;
 import com.wx.wlcx.model.XTRegion;
 import com.wx.wlcx.resource.XTRegionResource;
 import com.wx.wlcx.service.CompanyService;
+import com.wx.wlcx.service.RegionService;
 import com.wx.wlcx.utils.JsonResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,14 +20,14 @@ public class XTRegionController {
     private final static Logger logger = LoggerFactory.getLogger(XTRegionController.class);
 
     @Autowired
-    private CompanyService companyService;
+    private RegionService regionService;
 
-    @GetMapping("/findAllRegion")
-    public ResponseEntity<JsonResult> findAllUser(){
+    @GetMapping("/findRegionTree")
+    public ResponseEntity<JsonResult> findRegionTree(){
         logger.info(String.format("findAllRegion"));
         JsonResult r = new JsonResult();
         try {
-            List<XTRegion> xtRegions = companyService.getAllRegion();
+            List<XTRegion> xtRegions = regionService.findRegionTree();
             r.setResult(new XTRegionResource(xtRegions));
             r.setStatus("ok");
         } catch (Exception e) {

@@ -21,6 +21,12 @@
         </div>
     </div>
 
+    <div class="advert-container" ng-if="adResult.length == 0">
+        <img class="advert" src="../.././../images/advert.jpg">
+    </div>
+    <div class="advert-container" ng-if="adResult.length == 0">
+        <img class="advert" src="../.././../images/advert.jpg">
+    </div>
     <div class="advert-container">
         <img class="advert" src="../.././../images/advert.jpg">
     </div>
@@ -43,13 +49,20 @@
         
     <script type="text/ng-template" id="search-by-position.html">
         <div class="region-filter">
-            <div class="province-container">请选择省份<city-picker/></div>
-            <div class="city-container">请选择市<city-picker/></div>
+            <div class="province-container">请选择省/市/区检索：</div>
+            <div class="province-container">
+                <div class="region-input" ng-click="triggerRegionPicker()">
+                    <span class="region-name" ng-bind="regionPickerOptions.outsidePickedRegionName"></span>
+                    <span class="choose-icon">></span>
+                </div>
+            </div>
         </div>
-        <div class="search-btn" ng-click="onSearchAction()">
+        <div class="search-btn">
             <div class="search-btn-primary" ng-click="onSearchAction()">
                 <img src="../../../images/search-icon.svg"/>搜索
             </div>
         </div>
     </script>
+    <fm-region-picker must-select-all="regionPickerOptions.mustSelectAll" is-show-picker="regionPickerOptions.isShowPicker" outside-picked-region-name="regionPickerOptions.outsidePickedRegionName" ng-model="searchParams.region"></fm-region-picker>
+    <loading-icon show-loading-icon="showLoadingIcon"></loading-icon>
 </div>

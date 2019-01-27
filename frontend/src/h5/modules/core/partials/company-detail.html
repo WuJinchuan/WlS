@@ -59,11 +59,11 @@
             <div id="shipping-detail" class="shipping-detail hideDetail">
               <div class="nonstop-places-wrapper item-border-bottom">
                   <span class="title">直达: </span>
-                  <span ng-bind="isNotEmpty(nonStopPlaces) ? nonStopPlaces : '暂无业务范围'"></span>
+                  <span class="places-list" ng-bind="isNotEmpty(nonStopPlaces) ? nonStopPlaces : '暂无业务范围'"></span>
               </div>
               <div class="nonstop-places-wrapper item-border-bottom">
                   <span class="title">中转: </span>
-                  <span ng-bind="isNotEmpty(transferPlaces) ? transferPlaces : '暂无业务范围'"></span>
+                  <span class="places-list" ng-bind="isNotEmpty(transferPlaces) ? transferPlaces : '暂无业务范围'"></span>
               </div>
             </div>
           </div> 

@@ -1,4 +1,4 @@
-<div class="fm-company-container"  ng-click="goToCompanyDetail(company.id)">
+<div class="fm-company-container"  ng-click="goToCompanyDetail(companyDetail.id)">
     <div class="left-part">
         <div class="company-photo">
             <img class="company-img" src="../../images/sample1.jpg"/>
@@ -8,33 +8,35 @@
     <div class="right-part">
         <div class="company-name-wrapper">
             <div class="groom-label">推荐</div>
-            <div class="company-name">鑫鑫物流</div>
+            <div class="company-name" ng-bind="isNotEmpty(companyDetail.companyName) ? companyDetail.companyName : '匿名'"></div>
         </div>
         <div class="nonstop-route-wrapper item-border-bottom">
             <div class="origin-place">中山</div>
             <div class="chang-icon"><img src="../../images/repeat-icon.svg"></div>
             <div class="target-place">
-                <span>成都, 重庆</span>
+                <span ng-bind="isNotEmpty(nonStopPlaces) ? nonStopPlaces : '暂无业务范围'"></span>
                 <span class="nonstop-label">直达</span>
             </div>
         </div>
         <div class="nonstop-places-wrapper item-border-bottom">
             <span class="title">直达: </span>
-            成都,四川，湖北，武汉
+            <span ng-bind="isNotEmpty(nonStopPlaces) ? nonStopPlaces : '暂无业务范围'"></span>
         </div>
         <div class="nonstop-places-wrapper item-border-bottom">
             <span class="title">中转: </span>
-            成都,四川，湖北，武汉
+            <span ng-bind="isNotEmpty(transferPlaces) ? transferPlaces : '暂无业务范围'"></span>
         </div>
         <div class="nonstop-places-wrapper item-border-bottom">
             <span class="title">总部: </span>
-            浙江招生山大倒萨的撒大苏打撒旦撒旦
+            <span ng-bind="isNotEmpty(companyDetail.companyAddr) ? companyDetail.companyAddr : '匿名'"></span>
         </div>
         <div class="contacts nonstop-places-wrapper item-border-bottom">
-            <span class="title">联系人: </span> 刘伟
+            <span class="title">联系人: </span>
+            <span ng-bind="isNotEmpty(companyDetail.linker) ? companyDetail.linker : '匿名'"></span>
         </div>
         <div class="phone nonstop-places-wrapper item-border-bottom">
-                <span class="title">电话: </span> 15555555555
+                <span class="title">电话: </span>
+                <span ng-bind="isNotEmpty(companyDetail.mobilePhone) ? companyDetail.mobilePhone : '暂未设置'"></span>
         </div>
     </div>
 </div>

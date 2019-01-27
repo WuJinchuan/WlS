@@ -521,12 +521,14 @@
     <include refid="Column_List"/>
     from CM_Company cc left join CM_Matcher cm on cc.coid = cm.coid
     <where>
+      cc.coid is NOT NULL
+
       <if test="keyword != null">
-        cc.CO_Name like '%${keyword}%'
+        and cc.CO_Name like '%${keyword}%'
       </if>
 
       <if test="arCode != null">
-        or cm.AR_Code = #{arCode}
+        and cm.AR_Code = #{arCode}
       </if>
 
       <if test="arName != null">

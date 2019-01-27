@@ -13,10 +13,13 @@ public class CompanyResource {
     private String companyAddr;
     private String phone;//固定电话
     private String mobilePhone; //手机号
+    private String linker; //联系人
 
     private String logoPath;
     private String briefIntroduction;
     private String detailIntroduction;
+    private Double coMapx;
+    private Double coMapy;
 
     private List<Mathcer> mathcerList;
 
@@ -26,6 +29,9 @@ public class CompanyResource {
         this.companyAddr = cmCompany.getCoAddr();
         this.phone = cmCompany.getCoPhone();
         this.mobilePhone = cmCompany.getCoLkcode();
+        this.linker = cmCompany.getCoLinker();
+        this.coMapx = cmCompany.getCoMapx();
+        this.coMapy = cmCompany.getCoMapy();
 
         this.logoPath = cmCompany.getCoPiclogo();
         this.detailIntroduction = cmCompany.getCoIntroduction();
@@ -115,6 +121,30 @@ public class CompanyResource {
 
     public void setDetailIntroduction(String detailIntroduction) {
         this.detailIntroduction = detailIntroduction;
+    }
+
+    public String getLinker() {
+        return linker;
+    }
+
+    public void setLinker(String linker) {
+        this.linker = linker;
+    }
+
+    public Double getCoMapx() {
+        return coMapx;
+    }
+
+    public void setCoMapx(Double coMapx) {
+        this.coMapx = coMapx;
+    }
+
+    public Double getCoMapy() {
+        return coMapy;
+    }
+
+    public void setCoMapy(Double coMapy) {
+        this.coMapy = coMapy;
     }
 
     class Mathcer {

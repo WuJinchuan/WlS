@@ -4,16 +4,12 @@ angular.module(
   let vm = $scope
 
   const init = () => {
-    if ($cookies.get('searchResult') == undefined && $cookies.get('searchParams') == undefined) {
-      $state.go('searchRoute');
-      return;
-    }
-
-    if ($cookies.getObject('searchResult') != undefined && $cookies.getObject('searchParams') != undefined) {
-      vm.companyList = $cookies.getObject('searchResult')['companyResourceList'];
-      vm.searchParams = $cookies.getObject('searchParams');
-      $cookies.remove('searchResult')
-      $cookies.remove('searchParams')
+    if ($rootScope.searchResult != undefined && $rootScope.searchParams != undefined) {
+      vm.companyList = $rootScope.searchResult['companyResourceList'];
+      vm.searchParams = $rootScope.searchParams;
+      if (!!vm.companyList && vm.companyList.length == 0) {
+        $state.go('searchRoute');
+      }
     }
 
   }

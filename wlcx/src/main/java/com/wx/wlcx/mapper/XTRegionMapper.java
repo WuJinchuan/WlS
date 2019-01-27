@@ -10,4 +10,6 @@ public interface XTRegionMapper {
     int insertSelective(XTRegion record);
 
     List<XTRegion> getAll();
+
+    List<XTRegion> findRegionTree();
 }
