@@ -7,6 +7,7 @@
     <result column="AD_Type" property="adType" jdbcType="INTEGER" />
     <result column="AD_Image" property="adImage" jdbcType="NVARCHAR" />
     <result column="AD_ReMark" property="adRemark" jdbcType="NVARCHAR" />
+    <result column="Image_Full_Path" property="imageFullPath" jdbcType="NVARCHAR" />
   </resultMap>
 
   <resultMap id="ResultMapWithBLOBs" type="com.wx.wlcx.model.ADPicture" extends="BaseResultMap" >
@@ -23,5 +24,11 @@
 
   <select id="findOnePage" resultMap="ResultMapWithBLOBs">
     SELECT * FROM AD_Picture ORDER BY ADID
+  </select>
+
+   <select id="getAdPictures" resultMap="ResultMapWithBLOBs">
+     SELECT b.*, #{imagePathPrefix} + a.Sr_Date + '/' + RTRIM(a.Sr_Ident) + a.Sr_File as Image_Full_Path
+	  FROM Sys_Storage a LEFT JOIN AD_Picture b ON a.Sr_Ident = b.AD_Image
+	  WHERE b.CPID = '000000' AND b.AD_State = 2 AND b.AD_Type = 0 ORDER BY b.AD_Order
   </select>
 </mapper>

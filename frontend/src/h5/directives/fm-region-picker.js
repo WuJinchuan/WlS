@@ -20,9 +20,9 @@ module.exports = angular.module('app').directive('fmRegionPicker', [
         scope.regions = []
         scope.pickList = []
         scope.pickedRegions = []
-        scope.insidePickedRegionName = '未选定地区'
+        scope.insidePickedRegionName = '请选择区域'
         scope.outsidePickedRegionName = scope.insidePickedRegionName
-        scope.pickingRegionName = '未选定地区'
+        scope.pickingRegionName = '请选择区域'
         scope.isShowPicker = false
         scope.isLoading = false
 
@@ -65,7 +65,7 @@ module.exports = angular.module('app').directive('fmRegionPicker', [
         }
 
         const clearPicker = () => {
-          scope.pickingRegionName = '未选定地区'
+          scope.pickingRegionName = '请选择区域'
           scope.pickedRegions = []
           scope.pickList = scope.regions
         }

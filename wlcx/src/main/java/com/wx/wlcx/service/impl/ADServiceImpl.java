@@ -7,6 +7,7 @@ import com.wx.wlcx.service.ADService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,15 @@ public class ADServiceImpl implements ADService {
 
     @Autowired
     private ADPictureMapper adPictureMapper;
+
+    @Value("${Common.imagePathPrefix}")
+    private String imagePathPrefix;
+
+    @Override
+    public List<ADPicture> getAdPictures() {
+        logger.info("getAdPictures");
+        return adPictureMapper.getAdPictures(imagePathPrefix);
+    }
 
     @Override
     public List<ADPicture> getAll() {

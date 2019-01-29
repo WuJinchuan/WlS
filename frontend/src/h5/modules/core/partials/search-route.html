@@ -21,17 +21,14 @@
         </div>
     </div>
 
-    <div class="advert-container" ng-if="adResult.length == 0">
+    <div class="advert-container" ng-if="adPicList.length == 0">
         <img class="advert" src="../.././../images/advert.jpg">
     </div>
-    <div class="advert-container" ng-if="adResult.length == 0">
+    <div class="advert-container" ng-if="adPicList.length == 0">
         <img class="advert" src="../.././../images/advert.jpg">
     </div>
-    <div class="advert-container">
-        <img class="advert" src="../.././../images/advert.jpg">
-    </div>
-    <div class="advert-container">
-        <img class="advert" src="../.././../images/advert.jpg">
+    <div class="advert-container" ng-click="goToCompanyDetail(adPicture.coid)" ng-repeat="adPicture in adPicList">
+        <img class="advert" ng-src="{{adPicture.imageFullPath}}">
     </div>
 
     <script type="text/ng-template" id="search-by-name.html">
@@ -49,7 +46,6 @@
         
     <script type="text/ng-template" id="search-by-position.html">
         <div class="region-filter">
-            <div class="province-container">请选择省/市/区检索：</div>
             <div class="province-container">
                 <div class="region-input" ng-click="triggerRegionPicker()">
                     <span class="region-name" ng-bind="regionPickerOptions.outsidePickedRegionName"></span>

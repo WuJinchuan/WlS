@@ -25,7 +25,8 @@
                 <div class="chang-icon"><img src="../../../images/mobile-phone.svg"></div>
                 :
             </label>
-            <div class="value" ng-bind="isNotEmpty(companyDetail.mobilePhone) ? companyDetail.mobilePhone : '暂未设置'"></div>
+            <div class="value" ng-if="isNotEmpty(companyDetail.mobilePhone)"><a ng-href="tel:{{companyDetail.mobilePhone}}">{{companyDetail.mobilePhone}}</a></div>
+            <div class="value" ng-if="!isNotEmpty(companyDetail.mobilePhone)">暂未设置</div>
         </div>
         <div class="product-field">
             <label class="filed-label">
@@ -33,7 +34,8 @@
                 <div class="chang-icon"><img src="../../../images/local-phone.svg"></div>
                 :
             </label>
-            <div class="value" ng-bind="isNotEmpty(companyDetail.phone) ? companyDetail.phone : '暂未设置'"></div>
+            <div class="value" ng-if="isNotEmpty(companyDetail.phone)"><a ng-href="tel:{{companyDetail.phone}}">{{companyDetail.phone}}</a></div>
+            <div class="value" ng-if="!isNotEmpty(companyDetail.phone)">暂未设置</div>
         </div>
         <div class="product-field">
                 <label class="filed-label">
@@ -41,7 +43,7 @@
                     <div class="chang-icon"><img src="../../../images/position.svg"></div>
                     :
                 </label>
-            <div class="value" ng-bind="isNotEmpty(companyDetail.companyAddr) ? companyDetail.companyAddr : '暂未设置'">中山市东凤镇天润物流市场第22栋</div>
+            <div class="value" ng-bind="isNotEmpty(companyDetail.companyAddr) ? companyDetail.companyAddr : '暂未设置'"></div>
         </div>
 
         <div class="shipping-container">

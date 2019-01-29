@@ -85,6 +85,7 @@ $box-shadow: #a5bcd4;
                         white-space: nowrap;
                         overflow: hidden;
                         text-overflow: ellipsis;
+                        @include font-size(16px);
                     }
                 }
             }

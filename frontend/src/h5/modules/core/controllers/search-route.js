@@ -19,7 +19,11 @@ angular.module(
     vm.regionPickerOptions = {
       mustSelectAll: false,
       isShowPicker: false,
-      outsidePickedRegionName: '未选定地区',
+      outsidePickedRegionName: '请选择区域'
+    }
+
+    vm.goToCompanyDetail = (companyId) => {
+      $state.go('companyDetail', {id: companyId})
     }
 
     vm.triggerRegionPicker = () => {
@@ -77,12 +81,13 @@ angular.module(
 
     const getADInfo = () => {
       restService.http({
-        url: '/getAllAd',
+        url: '/getAdPictures',
         method: 'GET',
         params: {}
       }).then((resp) => {
         if (resp.status == 200) {
-          $scope.adResult = resp.data.result
+          $scope.adPicList = resp.data.result
+          console.log($scope.adResult)
         }
       })
     }

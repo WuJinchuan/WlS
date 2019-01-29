@@ -7,9 +7,6 @@ angular.module(
     if ($rootScope.searchResult != undefined && $rootScope.searchParams != undefined) {
       vm.companyList = $rootScope.searchResult['companyResourceList'];
       vm.searchParams = $rootScope.searchParams;
-      if (!!vm.companyList && vm.companyList.length == 0) {
-        $state.go('searchRoute');
-      }
     }
 
   }

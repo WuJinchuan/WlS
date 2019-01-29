@@ -26,6 +26,9 @@ angular.module(
           vm.transferPlaces = '';
           angular.forEach(vm.companyDetail.mathcerList, (matcher) => {
             let place = matcher.arName;
+            if (place == null) {
+              return;
+            }
             let placesArr = place.split("-");
             if (matcher.style == NON_STOP_CODE) {
               if (!vm.isNotEmpty(vm.nonStopPlaces)) {

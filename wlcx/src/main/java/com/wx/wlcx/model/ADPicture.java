@@ -13,6 +13,8 @@ public class ADPicture {
 
     private byte[] adIcon;
 
+    private String imageFullPath;
+
     public String getAdid() {
         return adid;
     }
@@ -59,5 +61,13 @@ public class ADPicture {
 
     public void setAdIcon(byte[] adIcon) {
         this.adIcon = adIcon;
+    }
+
+    public String getImageFullPath() {
+        return imageFullPath;
+    }
+
+    public void setImageFullPath(String imageFullPath) {
+        this.imageFullPath = imageFullPath;
     }
 }

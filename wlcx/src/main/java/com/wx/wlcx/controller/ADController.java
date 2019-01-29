@@ -21,8 +21,25 @@ public class ADController {
     private ADService adService;
 
     //获取所有数据
+    @GetMapping("/getAdPictures")
+    public ResponseEntity<JsonResult> getAdPictures(){
+        logger.info("get adversise picture");
+        JsonResult r = new JsonResult();
+        try {
+            List<ADPicture> ads = adService.getAdPictures();
+            r.setResult(ads);
+            r.setStatus("ok");
+        } catch (Exception e) {
+            r.setResult(e.getClass().getName() + ":" + e.getMessage());
+            r.setStatus("error");
+            e.printStackTrace();
+        }
+        return ResponseEntity.ok(r);
+    }
+
+    //获取所有数据
     @GetMapping("/getAllAd")
-    public ResponseEntity<JsonResult> getUserList (){
+    public ResponseEntity<JsonResult> getAllAd (){
         logger.info("get all ads");
         JsonResult r = new JsonResult();
         try {

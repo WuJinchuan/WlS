@@ -120,11 +120,11 @@
     select 
     <include refid="Base_Column_List" />
     from CM_Company
-    where COID = #{coid,jdbcType=NCHAR}
+    where cc.CPID = #{cpid} and  COID = #{coid,jdbcType=NCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from CM_Company
-    where COID = #{coid,jdbcType=NCHAR}
+    where cc.CPID = #{cpid} and COID = #{coid,jdbcType=NCHAR}
   </delete>
   <insert id="insert" parameterType="com.wx.wlcx.model.CMCompany" >
     insert into CM_Company (COID, NDID, CPID, CO_Base, 
@@ -475,7 +475,7 @@
         CO_Survey = #{coSurvev,jdbcType=NVARCHAR},
       </if>
     </set>
-    where COID = #{coid,jdbcType=NCHAR}
+    where cc.CPID = #{cpid} and COID = #{coid,jdbcType=NCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.wx.wlcx.model.CMCompany" >
     update CM_Company
@@ -513,7 +513,7 @@
       CO_PicLogo = #{coPiclogo,jdbcType=NVARCHAR},
       CO_Introduction = #{coIntroduction,jdbcType=NVARCHAR},
       CO_Survey = #{coSurvev,jdbcType=NVARCHAR}
-    where COID = #{coid,jdbcType=NCHAR}
+    where cc.CPID = #{cpid} and COID = #{coid,jdbcType=NCHAR}
   </update>
 
   <select id="findCompany" resultMap="BaseCompanyMap" >
@@ -521,7 +521,7 @@
     <include refid="Column_List"/>
     from CM_Company cc left join CM_Matcher cm on cc.coid = cm.coid
     <where>
-      cc.coid is NOT NULL
+      cc.CPID = #{cpid}
 
       <if test="keyword != null">
         and cc.CO_Name like '%${keyword}%'
@@ -542,6 +542,6 @@
     SELECT
     <include refid="Column_List"/>
     FROM CM_Company cc LEFT JOIN CM_Matcher cm ON cc.COID = cm.COID
-      where cc.COID = #{coId}
+      where cc.CPID = #{cpid} and cc.COID = #{coId}
   </select>
 </mapper>
